@@ -9,7 +9,6 @@ function fish_prompt
     set -l color_error (set_color $fish_color_error)
     set -l color_normal "$color2"
 
-    echo -sn " "
 
     if test "$status_copy" -ne 0
         set color "$color_error"
@@ -17,7 +16,7 @@ function fish_prompt
         set color3 "$color_error"
     end
 
-    set -l glyph " $color2\$$color_normal"
+    set -l glyph "$color2\$$color_normal"
 
     if test 0 -eq (id -u "$USER")
         echo -sn "$color_error# $color_normal"
@@ -110,4 +109,5 @@ function fish_prompt
     end
 
     echo -sn "$color_normal "
+    echo -e "\n|> "
 end
